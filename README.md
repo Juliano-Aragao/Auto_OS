@@ -87,13 +87,7 @@ Não necessita instalação.
 Clone o repositório:
 
 ```bash
-git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-```
-
-Entre na pasta:
-
-```bash
-cd NOME_DO_REPOSITORIO
+git clone https://github.com/Juliano-Aragao/Auto_OS.git
 ```
 
 Instale as dependências:
