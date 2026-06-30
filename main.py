@@ -88,9 +88,7 @@ def listar_Os():
         # Transforma os valores em uma lista para podermos modificar o último elemento
         valores = list(n.values())
         
-        # Altera o último elemento (Status): se for True vira 'Ativo', se for False vira 'Fechado'
-        # (Se o seu True/False for String, altere para: 'Aberto' if valores[-1] == 'True' else 'Fechado')
-        valores[-1] = 'Aberto' if valores[-1] else 'Fechado'
+       valores[-1] = 'Aberto' if valores[-1] else 'Fechado'
         
         linhas.append(valores)
         
@@ -122,7 +120,7 @@ def abrir_os():
     global codigo_os
     codigo_os += 1
     
-    # Pega a data atual do sistema (sem as horas) para usar na validação
+    # Pea a data atual do sistema (sem as horas) para usar na validação -
     datastamp = datetime.now().date()
     
     print("\n✨ NEW ORDER | CADASTRO DE ORDEM DE SERVIÇO ✨\n")
@@ -169,14 +167,13 @@ def abrir_os():
             except ValueError:
                 print("❌ Erro: Formato de data inválido! Digite no padrão dd/mm/aaaa.")
         
-        # 5. Agora sim, salvamos todos os dados coletados no dicionário
         nova_os = {
             "codigo_os": codigo_os,
             "codigo_cli": codigo_cli,
             "nome_cli": nome_cli,
             "descricao": descricao,
             "valor": valor,
-            "data_entrega": data_input, # Salvamos a string formatada dd/mm/aaaa para exibição posterior
+            "data_entrega": data_input, # estou salvando a string formatada dd/mm/aaaa para exibição posterior
             "status": True
         }
         
@@ -207,14 +204,13 @@ def fechar_os():
     # 2. Busca da OS dentro da lista dados_os
     os_encontrada = None
     for ordem in dados_os:
-        # Mudamos aqui para a chave real do seu dicionário: "codigo_os"
+        
         id_os = ordem.get("codigo_os")
         
         if id_os is not None and int(id_os) == codigo_busca:
             os_encontrada = ordem
-            break  # Encontrou? Para o laço de busca
-            
-    # 3. Verificação e alteração do status
+            break  
+     
     if os_encontrada:
         # Verifica se ela já não está fechada
         if os_encontrada.get("status") == False:
@@ -226,7 +222,7 @@ def fechar_os():
     else:
         print(f"❌ Erro: Ordem de Serviço n° {codigo_busca} não foi encontrada.")         
 
-def caixa():
+def caixa(): # este trecho foi criado com a ajuda do copilot
     # 1. VERIFICAÇÃO: Se a lista estiver vazia, não há como criar o df
     if not dados_os:
         print("❌ Não há nenhuma Ordem de Serviço cadastrada no sistema.")
@@ -302,7 +298,7 @@ while True:
 
     if opcao == "1":
         cls()
-        listar_cliente()  # Sua função existente
+        listar_cliente()  
         input("\nPressione Enter para voltar ao menu...")
 
     elif opcao == "2":
@@ -312,7 +308,7 @@ while True:
 
     elif opcao == "3":
         cls()
-        abrir_os()  # Sua função existente
+        abrir_os()  
         input("\nPressione Enter para voltar ao menu...")
 
     elif opcao == "4":
@@ -333,16 +329,10 @@ while True:
     elif opcao == "7":
         cls()
         print("\n⚙️ Obrigado por utilizar o sistema. Até logo!")
-        break  # Sai do programa de vez
+        break  
 
     else:
         input("\n❌ Opção inválida! Digite um número de 1 a 7. (Enter)")
 
 exibir_menu()        
 
-#listar_cliente()  # ok
-#cadatrar_cliente() # ok
-#abrir_os()
-#listar_Os() #ok
-#fechar_os()
-#caixa()
