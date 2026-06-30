@@ -180,9 +180,8 @@ Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia, 
 GitHub:
 
 https://https://github.com/Juliano-Aragao
-LinkedIn:
 
-https://https://www.linkedin.com/in/juliano-aragao
+LinkedIn:https://https://www.linkedin.com/in/juliano-aragao
 ---
 
 # 🙏 Agradecimentos
